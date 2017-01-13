@@ -72,7 +72,7 @@ public class TimeAnnotatedTokenFilterFactory extends AbstractTokenFilterFactory 
 		            fieldNo += 1;
 		          }
 		        }
-		        termAtt.setLength(iFirst); // simply set a new length
+		        termAtt.setLength(iFirst > 0 ? iFirst : length); // simply set a new length
 		        if (fieldNo >= 2) {
 		        	int len = iSecond - iFirst - 1;
 		        	int start = Integer.parseInt(new String(buffer, iFirst+1, len));

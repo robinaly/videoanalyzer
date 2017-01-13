@@ -3,6 +3,18 @@ TimeAnnotations Analysis for Elasticsearch
 
 This project is heavily based on [the pinyin analyzer](https://github.com/medcl/elasticsearch-analysis-pinyin)
 
+Installation
+=============
+
+Install the plugin:
+
+<pre>
+elasticsearch-plugin install file:///$PWD/target/releases/elasticsearch-videoAnalysis-5.1.1.zip
+</pre>
+
+Tests
+============
+
 1.Create a index with custom analyzer
 <pre>
 curl -XPUT http://localhost:9200/test/ -d'
@@ -62,3 +74,5 @@ curl -XGET 'http://localhost:9200/test/video/1/_termvectors?pretty=true'
 
 
 6.That's all, have fun.
+
+
