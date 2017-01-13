@@ -8,7 +8,7 @@
     <files>
         <file>
             <source>${project.basedir}/src/main/resources/plugin-descriptor.properties</source>
-            <outputDirectory></outputDirectory>
+            <outputDirectory>/elasticsearch</outputDirectory>
             <filtered>true</filtered>
         </file>
     </files>
@@ -17,23 +17,17 @@
             <outputDirectory>/</outputDirectory>
             <useProjectArtifact>true</useProjectArtifact>
             <useTransitiveFiltering>true</useTransitiveFiltering>
-            <excludes>
-                <exclude>org.elasticsearch:elasticsearch</exclude>
-            </excludes>
         </dependencySet>
         <dependencySet>
-            <outputDirectory>/</outputDirectory>
+            <outputDirectory>/elasticsearch</outputDirectory>
             <useProjectArtifact>true</useProjectArtifact>
             <useTransitiveFiltering>true</useTransitiveFiltering>
-            <includes>
-                <include>org.apache.lucene:lucene-pinyin</include>
-            </includes>
         </dependencySet>
     </dependencySets>
    <fileSets>
         <fileSet>
             <directory>${basedir}/lib/</directory>
-            <outputDirectory>/</outputDirectory>
+            <outputDirectory>/elasticsearch</outputDirectory>
         </fileSet>
     </fileSets>
 </assembly>
