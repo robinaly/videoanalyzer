@@ -58,13 +58,25 @@ curl -XPOST http://localhost:9200/test/_mapping/video -d'
 
 3.Add documents
 <pre>
-curl -XPOST http://localhost:9200/test/video/1 -d'{"asr":"Star|12|14 Wars|14|15", "shots": "s|123|124 s|240|250"}'
+curl -XPOST http://localhost:9200/test/video/1 -d'{"asr":"Star|12|14 Wars", "shots": "s|123|124 s|240|250"}'
 curl -XPOST http://localhost:9200/test/video/2 -d'{"asr":"Hello|12|14 World|14|15", "shots": "s|123|124 s|124|213"}'
 </pre>
 
 4.Let's search
 <pre>
-curl http://localhost:9200/test/video/_search?q=asr:world?pretty=true
+curl 'http://localhost:9200/test/video/_search?q=asr:World&pretty=true'
+</pre>
+
+<pre>
+curl http://localhost:9200/test/video/_search?pretty=true -d '
+{
+  "_source" : ["shots"],
+  "query": {
+    "query_string": {
+      "query": "asr:world"
+    }
+  }
+}'
 </pre>
 
 5.Show term vector
