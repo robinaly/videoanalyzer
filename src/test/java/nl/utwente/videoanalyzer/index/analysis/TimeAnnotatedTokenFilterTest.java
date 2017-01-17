@@ -62,7 +62,7 @@ public class TimeAnnotatedTokenFilterTest {
 			@SuppressWarnings("resource")
 			Analyzer analyzer = new TestAnalyzer();
 	       
-	        TokenStream stream  = analyzer.tokenStream("test", new StringReader("test|12|343|3.4 xzy|3|342"));
+	        TokenStream stream  = analyzer.tokenStream("test", new StringReader("test|12|343|3.4 test|12|23 xzy|3|342 test2"));
 	        stream.reset();
 	        CharTermAttribute termAtt = stream.getAttribute(CharTermAttribute.class);
 	        OffsetAttribute offsetAtt = stream.getAttribute(OffsetAttribute.class);
